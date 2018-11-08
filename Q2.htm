@@ -32,6 +32,24 @@
 
     <script type="text/javascript">
 
+        function change(x){
+            let smiley = document.getElementById("roc");
+            let frown = document.getElementById("suc");
+
+            if (x== "Rocks"){
+                smiley.style.fontFamily = "Lucida Handwriting";
+                smiley.style.font = "red";
+                smiley.style.fontSize = "2em";
+                smiley.style.backgroundColor = "yellow";
+            } else if (x== "Sucks"){
+                frown.style.fontFamily = "Arial";
+                frown.style.font = "green";
+                frown.style.fontSize = "2em";
+                frown.style.backgroundColor = "blue";
+                frown.style.fontWeight = "bold";
+            } 
+        }
+
     </script>
 </head>
 
@@ -49,12 +67,12 @@
 
     <table>
         <tr>
-            <td><img src="smiley.jpg" alt="Smiling Face" title="Smile"></td>
-            <td>Web Tech Rocks!</td>
+            <td><img src="smiley.jpg" alt="Smiling Face" title="Smile" onclick="change('Rocks')"></td>
+            <td id="roc">Web Tech Rocks!</td>
         </tr>
         <tr>
-            <td><img src="frown.jpg" alt="Frown Face" title="Sad"></td>
-            <td>Web Tech Sucks!</td>
+            <td><img src="frown.jpg" alt="Frown Face" title="Sad" onclick="change('Sucks')"></td>
+            <td id="suc">Web Tech Sucks!</td>
         </tr>
 
     </table>

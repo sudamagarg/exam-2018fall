@@ -30,6 +30,29 @@
             text-align: left;
         }
     </style>
+
+    <script type="text/javascript">
+
+    function product (){
+
+
+        let f = document.getElementById("form1");
+        let a = parseInt(f.from.value);
+        let b = parseInt(f.to.value);
+
+        let result = 0;
+
+        for (let i = a; i <=b; i++) {
+            result += i*i;
+        }
+        document.getElementById("result").innerHTML = result;
+
+        return false;
+    }
+    
+    
+    
+    </script>
 </head>
 
 <body>
@@ -41,15 +64,15 @@
         For full points, you need to validate the inputs properly. (5 points)
 
     </p>
-    <form>
+    <form id="form1">
         <p>
             From: <input type="text" name="from" size="10"/> To: <input type="text" name="to" size="10">
         </p>
         <p>
-            <input type="submit" name="calc" value="Calculate">
+            <input type="submit" name="calc" value="Calculate" onclick="return product()">
             <input type="reset" name="reset" value="CLEAR">
         </p>
-        <p>The product is .</p>
+        <p>The product is <span id="result"></span></p>
     </form>
 
 </body>
